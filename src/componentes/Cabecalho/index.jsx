@@ -9,11 +9,11 @@ const HeaderEstilizado = styled.header`
     }
 `
 
-export const Cabecalho = () => {
+export const Cabecalho = ({setFiltro}) => {
     return(
         <HeaderEstilizado>
             <img src="/imagens/logo.png" alt=""/>
-            <CampoTexto/>
+            <CampoTexto setFiltro={setFiltro}/>
         </HeaderEstilizado>
     )
 } 

@@ -16,10 +16,10 @@ const ImagensContainer = styled.section`
     flex-wrap: wrap;
     gap: 24px;
 `;
-export const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
+export const Galeria = ({ fotos = [], aoFotoSelecionada, aoAlterarFavorito, setTag }) => {
     return (
         <>
-            <Tags />
+            <Tags setTag={setTag} />
             <GaleriaContainer>
                 <SecaoFluida>
                     <Titulo>
@@ -29,7 +29,9 @@ export const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
                         {fotos.map(foto => <Imagem 
                             aoZomSolciitado={aoFotoSelecionada}
                             key={foto.id} 
-                            foto={foto} />)
+                            foto={foto} 
+                            aoAlterarFavorito={aoAlterarFavorito}
+                            />)
                         }
                     </ImagensContainer>
                 </SecaoFluida>
