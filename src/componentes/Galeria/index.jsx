@@ -16,7 +16,7 @@ const ImagensContainer = styled.section`
     flex-wrap: wrap;
     gap: 24px;
 `;
-export const Galeria = ({ fotos = [] }) => {
+export const Galeria = ({ fotos = [], aoFotoSelecionada }) => {
     return (
         <>
             <Tags />
@@ -27,6 +27,7 @@ export const Galeria = ({ fotos = [] }) => {
                     </Titulo>
                     <ImagensContainer>
                         {fotos.map(foto => <Imagem 
+                            aoZomSolciitado={aoFotoSelecionada}
                             key={foto.id} 
                             foto={foto} />)
                         }
