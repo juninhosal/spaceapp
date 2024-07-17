@@ -30,13 +30,13 @@ const DialogEstilizado = styled.dialog`
     }
 `;
 
-export const ModalZoon = ({ foto, aoFechar  }) => {
+export const ModalZoon = ({ foto, aoFechar, aoAlterarFavorito  }) => {
     return (
         <>
             {foto && <>(
                 <Overlay />
                 <DialogEstilizado open={!!foto} onClose={aoFechar}>
-                    <Imagem foto={foto} expandida={true} />
+                    <Imagem foto={foto} expandida={true} aoAlterarFavorito={aoAlterarFavorito}/>
                     <form method="dialog">
                         <BotaoIcone formMethod="dialog">
                             <img src="/icones/fechar.png" alt="Icone de fechar" />
